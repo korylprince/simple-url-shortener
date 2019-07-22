@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>URL Shortener</title>
+        <meta name="description" content="URL Shortener">
+        <meta name="author" content="Kory Prince">
+        <style>
+body {
+    background-color: #2257a4;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+#form {
+    flex: 1;
+    max-width: 480px;
+    background-color: #fff;
+    padding: 25px;
+    text-align: center;
+}
+
+#form input, #form button {
+    display: block;
+    margin: 15px auto;
+}
+
+#form input {
+    min-width: 320px;
+}
+        </style>
+    </head>
+    <body>
+        <div id="root">
+            <form id="form">
+                <h2>URL Shortener</h2>
+                <input id="url" placeholder="Enter URL..." />
+                <button id="submit" type="button">Shorten URL</button>
+                <div id="result"></div>
+            </form>
+        </div>
+        <script type="text/javascript">
+            async function createURL(url) {
+                try {
+                    const res = await fetch("api/1.0/urls", {
+                        method: "POST",
+                        body: `{"url": "${url}"}`,
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    })
+
+                    if (!res.ok) {
+                        throw Error(res.statusText)
+                    }
+
+                    const json = await res.json()
+                    return `${window.location.href}${json.code}`
+                } catch(error) {
+                    alert(`Unable to create shortened URL: ${error}`)
+                    return null
+                }
+            }
+
+            async function submit() {
+                const shortened = await createURL(document.querySelector("#url").value)
+                if (shortened != null) {
+                    document.querySelector("#result").innerHTML = `Your shortened URL is <a href="${shortened}">${shortened}</a>`
+                }
+            }
+
+            document.querySelector("#submit").addEventListener("click", submit)
+        </script>
+    </body>
+</html>
