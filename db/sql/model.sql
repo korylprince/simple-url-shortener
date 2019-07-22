@@ -1,4 +1,4 @@
 CREATE TABLE url (
-    code PRIMARY KEY,
+    code VARCHAR(255) PRIMARY KEY,
     url TEXT NOT NULL
 );
