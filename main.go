@@ -8,6 +8,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/korylprince/simple-url-shortener/db/sql"
 	"github.com/korylprince/simple-url-shortener/httpapi"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
