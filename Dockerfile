@@ -1,8 +1,8 @@
-FROM golang:1.12-alpine as builder
+FROM golang:1.14-alpine as builder
 
 ARG VERSION
 
-RUN apk add --no-cache git ca-certificates
+RUN apk add --no-cache git ca-certificates build-base
 
 RUN git clone --branch "v1.1" --single-branch --depth 1 \
     https://github.com/korylprince/fileenv.git /go/src/github.com/korylprince/fileenv
@@ -13,7 +13,7 @@ RUN git clone --branch "$VERSION" --single-branch --depth 1 \
 RUN go install github.com/korylprince/fileenv
 RUN go install github.com/korylprince/simple-url-shortener
 
-FROM alpine:3.10
+FROM alpine:3.12
 
 RUN apk add --no-cache ca-certificates
 
