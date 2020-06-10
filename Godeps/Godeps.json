@@ -1,6 +1,6 @@
 {
 	"ImportPath": "github.com/korylprince/simple-url-shortener",
-	"GoVersion": "go1.12",
+	"GoVersion": "go1.14",
 	"GodepVersion": "v80",
 	"Deps": [
 		{
@@ -102,6 +102,11 @@
 			"ImportPath": "github.com/konsorten/go-windows-terminal-sequences",
 			"Comment": "v1.0.2",
 			"Rev": "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-sqlite3",
+			"Comment": "v2.0.6",
+			"Rev": "baaf8a978416040e7f2d00ac36e345098d0588d8"
 		},
 		{
 			"ImportPath": "github.com/rogpeppe/go-internal/modfile",
