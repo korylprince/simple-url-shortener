@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	nurl "net/url"
 
 	"github.com/asaskevich/govalidator"
 	"github.com/gorilla/mux"
@@ -17,7 +18,14 @@ func (s *Server) createURLLegacy(r *http.Request, tx *sql.Tx) (int, interface{})
 		return http.StatusBadRequest, errors.New("Invalid URL")
 	}
 
-	code, err := s.db.CreateURL(tx, url)
+	pURL, err := nurl.Parse(url)
+	if err != nil {
+		return http.StatusBadRequest, fmt.Errorf("Unable to parse URL: %v", err)
+	}
+	pURL.RawQuery = r.URL.RawQuery
+	pURL.Fragment = r.URL.Fragment
+
+	code, err := s.db.CreateURL(tx, pURL.String())
 	if err != nil {
 		return http.StatusInternalServerError, err
 	}
