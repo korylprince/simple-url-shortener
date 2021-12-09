@@ -5,13 +5,19 @@ github.com/gobuffalo/packr/v2 does not try to reinvent the wheel! Instead, it us
 Thank you to the following **GIANTS**:
 
 
-* [github.com/gobuffalo/envy](https://godoc.org/github.com/gobuffalo/envy)
-
 * [github.com/gobuffalo/logger](https://godoc.org/github.com/gobuffalo/logger)
 
 * [github.com/gobuffalo/packd](https://godoc.org/github.com/gobuffalo/packd)
 
 * [github.com/karrick/godirwalk](https://godoc.org/github.com/karrick/godirwalk)
+
+* [github.com/konsorten/go-windows-terminal-sequences](https://godoc.org/github.com/konsorten/go-windows-terminal-sequences)
+
+* [github.com/markbates/errx](https://godoc.org/github.com/markbates/errx)
+
+* [github.com/markbates/oncer](https://godoc.org/github.com/markbates/oncer)
+
+* [github.com/markbates/safe](https://godoc.org/github.com/markbates/safe)
 
 * [github.com/rogpeppe/go-internal](https://godoc.org/github.com/rogpeppe/go-internal)
 
