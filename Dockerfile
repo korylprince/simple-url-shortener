@@ -2,6 +2,8 @@ FROM golang:1-alpine as builder
 
 ARG VERSION
 
+RUN apk add --no-cache build-base
+
 RUN go install github.com/korylprince/fileenv@v1.1.0
 RUN go install "github.com/korylprince/simple-url-shortener@$VERSION"
 
