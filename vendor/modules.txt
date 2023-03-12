@@ -1,13 +1,13 @@
-# github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
+# github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 ## explicit; go 1.13
 github.com/asaskevich/govalidator
-# github.com/go-sql-driver/mysql v1.6.0
-## explicit; go 1.10
-github.com/go-sql-driver/mysql
-# github.com/gobuffalo/logger v1.0.6
+# github.com/go-sql-driver/mysql v1.7.0
 ## explicit; go 1.13
+github.com/go-sql-driver/mysql
+# github.com/gobuffalo/logger v1.0.7
+## explicit; go 1.16
 github.com/gobuffalo/logger
-# github.com/gobuffalo/packd v1.0.1
+# github.com/gobuffalo/packd v1.0.2
 ## explicit; go 1.13
 github.com/gobuffalo/packd
 github.com/gobuffalo/packd/internal/takeon/github.com/markbates/errx
@@ -22,7 +22,7 @@ github.com/gobuffalo/packr/v2/plog
 # github.com/gorilla/mux v1.8.0
 ## explicit; go 1.12
 github.com/gorilla/mux
-# github.com/karrick/godirwalk v1.16.1
+# github.com/karrick/godirwalk v1.17.0
 ## explicit; go 1.13
 github.com/karrick/godirwalk
 # github.com/kelseyhightower/envconfig v1.4.0
@@ -37,18 +37,18 @@ github.com/markbates/oncer
 # github.com/markbates/safe v1.0.1
 ## explicit
 github.com/markbates/safe
-# github.com/mattn/go-sqlite3 v1.14.9
-## explicit; go 1.12
+# github.com/mattn/go-sqlite3 v1.14.16
+## explicit; go 1.16
 github.com/mattn/go-sqlite3
-# github.com/sirupsen/logrus v1.8.1
+# github.com/sirupsen/logrus v1.9.0
 ## explicit; go 1.13
 github.com/sirupsen/logrus
-# golang.org/x/sys v0.0.0-20211209171907-798191bca915
+# golang.org/x/sys v0.6.0
 ## explicit; go 1.17
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/plan9
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# golang.org/x/term v0.0.0-20210927222741-03fcf44c2211
+# golang.org/x/term v0.6.0
 ## explicit; go 1.17
 golang.org/x/term
