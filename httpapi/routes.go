@@ -1,21 +1,24 @@
 package httpapi
 
 import (
+	_ "embed"
 	"fmt"
 	"log"
 	"net/http"
 	"regexp"
 
-	packr "github.com/gobuffalo/packr/v2"
 	"github.com/gorilla/mux"
 	"github.com/korylprince/simple-url-shortener/db"
 )
 
-//API is the current API version
+//go:embed static/index.html
+var indexBytes []byte
+
+// API is the current API version
 const API = "1.0"
 const apiPath = "/api/" + API
 
-//Router returns a new API router
+// Router returns a new API router
 func (s *Server) Router() http.Handler {
 	r := mux.NewRouter()
 	r.SkipClean(true)
@@ -46,13 +49,8 @@ func (s *Server) Router() http.Handler {
 			withRedirectResponse(
 				withTX(s.db, s.readURLLegacy))))
 
-	box := packr.New("Static", "./static")
 	r.Methods("GET").Path("/").Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		idx, err := box.Find("index.html")
-		if err != nil {
-			panic("expected to find index.html")
-		}
-		if _, err := w.Write(idx); err != nil {
+		if _, err := w.Write(indexBytes); err != nil {
 			log.Println("Unable to write HTTP response:", err)
 		}
 	}))
