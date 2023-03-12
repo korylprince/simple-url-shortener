@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-//Debug will pass debugging information to the client if true
+// Debug will pass debugging information to the client if true
 var Debug = false
 
 type statusWriter struct {

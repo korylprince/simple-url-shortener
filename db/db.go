@@ -4,10 +4,10 @@ import (
 	"database/sql"
 )
 
-//Charset is the valid charset for a URL code
+// Charset is the valid charset for a URL code
 const Charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 
-//DB represents a database
+// DB represents a database
 type DB interface {
 	//Begin returns a transaction for the database or an error if one occurred
 	Begin() (*sql.Tx, error)

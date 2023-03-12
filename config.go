@@ -6,7 +6,7 @@ import (
 	"github.com/kelseyhightower/envconfig"
 )
 
-//Config represents options given in the environment
+// Config represents options given in the environment
 type Config struct {
 	CodeLength int `default:"6"`
 
