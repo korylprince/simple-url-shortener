@@ -5,7 +5,7 @@ import (
 )
 
 // Charset is the valid charset for a URL code
-const Charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
+const Charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"
 
 // DB represents a database
 type DB interface {
